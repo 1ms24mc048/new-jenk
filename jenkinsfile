@@ -1,0 +1,21 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Checkouts') {
+            steps {
+                git branch: 'main', url: 'https://github.com/1ms24mc048/new-jenk'
+            }
+        }
+
+        stage('Build') {
+            steps {
+                echo "Building......"
+            }
+        }
+
+        stage('Test') {
+            steps {
+                echo "Testing......"
+            }
+        }
