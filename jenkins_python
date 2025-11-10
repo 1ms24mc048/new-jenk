@@ -1,0 +1,27 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Checkouts') {
+            steps {
+                git branch: 'main', url: 'https://github.com/1ms24mc048/new-jenk'
+            }
+        }
+
+        stage('Compile') {
+            steps {
+                echo "Compiling and executing python program......"
+                sh 'python3 Hello.py'
+            }
+        }
+    }
+
+    post {
+        success {
+              echo 'Build and execution successful'
+        }
+        failure {
+              echo 'Build failed'
+        }
+    }
+}
