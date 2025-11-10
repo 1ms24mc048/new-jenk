@@ -1,0 +1,38 @@
+pipeline {
+    agent any
+
+    tools {
+        jdk 'jdk21' //Must match the name configured in jenkins
+    }
+
+    stages {
+        stage('Checkouts') {
+            steps {
+                git branch: 'main', url: 'https://github.com/1ms24mc048/new-jenk'
+            }
+        }
+
+        stage('Compile') {
+            steps {
+                echo "Compiling java program......"
+                sh 'javac Hello.java'
+            }
+        }
+
+        stage('Run') {
+            steps {
+                echo "Running java program......"
+                sh 'java Hello'
+            }
+        }
+    }
+
+    post {
+        success {
+              echo 'Build and execution successful'
+        }
+        failure {
+              echo 'Build failed'
+        }
+    }
+}
