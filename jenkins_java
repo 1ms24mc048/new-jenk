@@ -6,7 +6,7 @@ pipeline {
     }
 
     stages {
-        stage('Checkoutss') {
+        stage('Checkoutsssssssssssssssssss') {
             steps {
                 git branch: 'main', url: 'https://github.com/1ms24mc048/new-jenk'
             }
