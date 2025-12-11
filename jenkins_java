@@ -14,7 +14,7 @@ pipeline {
 
         stage('Compile') {
             steps {
-                echo "Compiling java program......"
+                echo "Compiling java program......ghjgyu"
                 sh 'javac Hello.java'
             }
         }
